@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<link rel = "stylesheet" type = "text/css" href = "index.css">
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+		<script src = "script.js" defer></script>
+		<title>Board game</title>
+	</head>
+
+	<body>
+		<div ng-app = "game" ng-controller = "gameCtrl" id = "gameLayout">
+			<div id = "boardLayout">
+				<table id = "grid">
+					<tr ng-repeat = "y in grid track by $index">
+						<td ng-repeat = "x in y track by $index" ng-model = "x" ng-click = "game.tryPlay(x)"
+							ng-style = "{'border-width' : x.isHole ? '0px' : '5px', 'background-color' : x.player.color}" />
+					</tr>
+				</table>
+			</div>
+
+			<div id = "infoLayout">
+				<div id = "currentPlayer">{{game.currentPlayer.name}}</div>
+				<div id = "timeLeft">{{countdown.minutesLeft}} : {{countdown.secondsLeft}} : {{countdown.hundredthLeft}}</div>
+			</div>
+		</div>
+	</body>
+</html>
+
