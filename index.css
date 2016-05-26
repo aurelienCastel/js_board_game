@@ -1,0 +1,33 @@
+:root
+{
+	--size: 50vw;
+}
+
+html
+{
+	width: 100%;
+	height: 100%;
+}
+
+body
+{
+	width: 100%;
+	height: 100%;
+}
+
+#grid
+{
+	width: var(--size);
+	height: var(--size);
+	border-collapse: collapse;
+}
+
+#grid td
+{
+	border:solid;
+}
+
+.text
+{
+	font-size: 2.5em;
+}
